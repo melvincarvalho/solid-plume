@@ -17,7 +17,12 @@
     <div id="layout" class="pure-g">
         <nav id="global-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="#" class="new" onclick="Plume.showEditor()"><img src="img/logo-white.svg" alt="Edit post">New post</a></li>
+            <li class="new hidden"><a href="?new">
+                <img src="img/logo-white.svg" alt="Edit post">New post</a>
+                <h1 class="menu-separator"></h1>
+            </li>
+            <li class="login"><a href="#" onclick="Plume.login()">Login</a></li>
+            <li class="logout hidden"><a href="#" onclick="Plume.logout()">Logout</a></li>
           </ul>
         </nav>
         <button aria-controls="global-nav" aria-haspopup="true" tabindex="1" id="menu-button">
@@ -26,12 +31,15 @@
           </span>
         </button>
 
-        <div id="main" class="main content pure-u-1 pure-u-md-3-4">
+        <div id="main" class="main content pure-u-1 pure-u-md-3-5">
+            <!-- Blog title -->
             <div class="blog-info header center-text">
-                <img class="blog-picture" src="">
-                <h1 class="blog-title">Blog Title</h1>
-                <h2 class="blog-tagline">Plume, a Solid blog platform</h2>
-                <div class="spacer"></div>
+                <a href="." class="no-decoration dark">
+                    <img class="blog-picture" src="">
+                    <h1 class="blog-title">Blog Title</h1>
+                    <h2 class="blog-tagline">Plume, a Solid blog platform</h2>
+                    <div class="separator"></div>
+                </a>
             </div>
             <!-- Loading animation -->
             <div class="loading center-text hidden">
@@ -65,8 +73,8 @@
                 </section>
                 <footer>
                     <button class="button publish success" onclick="Plume.publishPost()">Publish</button>
-                    <button class="button preview" onclick="Plume.togglePreview()">Preview</button>
-                    <button class="button float-right" onclick="Plume.resetAll()">Cancel</button>
+                    <button class="button preview" onclick="Plume.togglePreview()">View</button>
+                    <button class="button float-right" onclick="Plume.cancelPost()">Cancel</button>
                 </footer>
             </div>
 

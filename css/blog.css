@@ -37,6 +37,14 @@ h3 {
     font-weight: 100;
 }
 
+.separator {
+    position: relative;
+    margin: 35px 0;
+    height: 1px;
+    background: #ccc;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(#fff), color-stop(50%, #ccc));
+}
+
 .link {
     color: inherit;
 }
@@ -69,13 +77,8 @@ h3 {
 
 #layout {
     padding: 0;
-}
-
-.header {
-    text-align: center;
-    top: auto;
-    margin: 1em auto 0 auto;
-    /*height: 300px;*/
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar {
@@ -194,7 +197,6 @@ h3 {
     font-size: 2em;
     min-width: 100%;
     max-width: 100%;
-    display: block;
     padding: 0.5em 0;
     border-radius: 3px;
     outline: none;
@@ -255,7 +257,7 @@ a.editor-author, a.editor-author:visited {
 }
 .button {
     display: inline-block;
-    padding: 15px 5px;
+    padding: 20px 10px;
     margin-right: 5px;
     background: #fff;
     border-radius: 4px;
@@ -270,8 +272,7 @@ a.editor-author, a.editor-author:visited {
 .success {
     background: #1CB841!important;
     color: #fff;
-    border: 0;
-    padding: 16px 6px;
+    border: 1px solid #1CB841;
 }
 .danger {
     background: #CA3C3C!important;
@@ -360,63 +361,6 @@ a.editor-author, a.editor-author:visited {
     margin-top: 30px;
 }
 
-/* NAV */
-.nav {
-    height: 100px;
-    width: 100%;
-    background-color: #333;
-    line-height: 60px;
-    letter-spacing: 1px;
-}
-.nav-list {
-    margin: 0;
-    padding: 1em 0;
-    list-style: none;
-}
-.nav-item {
-    display: inline-block;
-    *display: inline;
-    zoom: 1.5;
-}
-.nav-item a {
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 85%;
-}
-.nav-item a:hover,
-.nav-item a:focus {
-    color: inherit;
-    border: 2px solid rgb(61, 146, 201);
-    text-decoration: none;
-}
-.nav-item img {
-    height: 20px;
-    display: inline-block;
-}
-.nav-item span {
-    color: inherit;
-}
-
-.content-subhead {
-    text-transform: uppercase;
-    color: #aaa;
-    border-bottom: 1px solid #eee;
-    padding: 0.4em 0;
-    font-size: 80%;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-}
-
-.content {
-    padding: 0 1em 0;
-}
-
-.post {
-    padding-bottom: 2em;
-}
 .post-edit {
     background: #129FEA;
     height: 25px;
@@ -425,10 +369,10 @@ a.editor-author, a.editor-author:visited {
     mask: url(../img/logo.svg) no-repeat 50% 50%;
 }
 .post-title {
-    font-size: 1.5em;
-    font-weight: 200;
+    font-size: 1.7em;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 0.2em;
+    margin-top: 1.5em;
 }
 
 .post-title>a,.post-title>a:hover,.post-title>a:visited {
@@ -438,20 +382,25 @@ a.editor-author, a.editor-author:visited {
 .post-title>a:hover {
     box-shadow: inset 0 0px 0 white, inset 0 -1px 0 #333;
 }
+.post-author {
+    /*font-size: 1.2em;*/
+}
 .post-author:hover, .post-author:visited {
     color: rgb(61, 146, 201);
 }
 .post-avatar {
     border-radius: 50px;
-    float: right;
-    height: 70px;
-    width: 70px;
-    margin-left: 1em;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 1em;
+}
+.post-date {
+    font-weight: 200;
 }
 .post-body {
     color: #444;
-    line-height: 1.8em;
-    padding-top: 1em;
+    line-height: 1.6em;
     font-weight: 200;
 }
 .post-body>a,.post-body>a:hover,.post-body>a:visited {
@@ -464,8 +413,8 @@ a.editor-author, a.editor-author:visited {
 }
 .post-meta {
     color: #999;
-    font-size: 90%;
-    line-height: 1.5em;
+    font-size: 0.8em;
+    line-height: 1.3em;
     margin: 0;
 }
 
@@ -554,6 +503,9 @@ pre {
 .dark {
     color: #333!important;
 }
+.grey {
+    color: #999;
+}
 
 .hidden {
     display: none;
@@ -615,8 +567,7 @@ pre {
 
 .content {
     margin: 0 auto;
-    padding: 0 2em;
-    margin-bottom: 50px;
+    padding: 0 1em;
     line-height: 1.6em;
     position: relative;
     top: 0;
@@ -625,7 +576,6 @@ pre {
     -o-transition: all 300ms;
     -webkit-transition: all 300ms;
     transition: all 300ms;
-    z-index: 1;
 }
 
 .header {
@@ -633,17 +583,17 @@ pre {
      color: #333;
      text-align: center;
      padding: 2em 2em 0 2em;
-     border-bottom: 1px solid #eee;
+    top: auto;
  }
 .header h1 {
     margin: 0.2em 0;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 300;
     line-height: 0.8em;
 }
 .header h2 {
     font-weight: 300;
-    color: #ccc;
+    color: #999;
     padding: 0;
     margin-top: 0;
 }
@@ -658,7 +608,7 @@ nav#global-nav {
   top: 0;
   left: -220px;
   width: 100%;
-  z-index: 10;
+  z-index: 9;
   -moz-transition: all 300ms;
   -o-transition: all 300ms;
   -webkit-transition: all 300ms;
@@ -672,7 +622,7 @@ body.active nav#global-nav {
 }
 nav#global-nav ul {
     margin: 0;
-    padding: 1em 0 0;
+    padding: 0;
 }
 nav#global-nav ul li {
     border-bottom: 1px solid #474747;
@@ -696,7 +646,7 @@ nav#global-nav ul li a:hover, nav#global-nav ul li a:focus {
   background-color: #474747;
 }
 nav#global-nav ul li a:active {
-  color: #9fbf00;
+  color: #3D92C9;
 }
 nav#global-nav img {
     position: relative;
@@ -714,13 +664,14 @@ nav#global-nav img {
     cursor: pointer;
     display: block;
     line-height: 1;
-    width: 60px;
-    height: 60px;
-    margin: 0.5em 0 auto 0.5em;
+    width: 4em;
+    height: 4em;
+    left: 0.5em;
+    top: 0.5em;
     padding: 0;
     position: fixed;
     text-align: center;
-    z-index: 5;
+    z-index: 8;
     -moz-transition: all 300ms;
     -o-transition: all 300ms;
     -webkit-transition: all 300ms;
@@ -770,14 +721,6 @@ nav#global-nav img {
         padding-right: 2em;
     }
 
-    .posts {
-        padding-top: 3em;
-    }
-
-    .post-title {
-        font-size: 2em;
-    }
-
     .blog-picture {
         display: inline;
     }
@@ -796,22 +739,23 @@ nav#global-nav img {
         left: 150px;
     }
 
-    .main {
+    .post-body {
         font-size: 125%;
     }
 
 }
 
 @media (max-width: 48em) {
-/*    #layout.active {
-        position: relative;
-        left: 150px;
-    }*/
     .header h1 {
         font-size: 1.7em;
     }
     .header h2 {
         font-size: 1.3em;
+    }
+
+    #menu-button {
+        width: 3em;
+        height: 3em;
     }
 
     article>footer {
